@@ -1,0 +1,30 @@
+name: pipeone
+on: 
+  push: 
+    branches: [ main ]
+jobs:
+  build: 
+    runs-on: ubuntu-latest
+    
+    permissions:
+      contents: write
+  
+    steps:
+      - name: Clonar repositorio
+        uses: actions/checkout@v4
+        
+      - name: Configurar version de python
+        uses: actions/setup-python@v5
+        with: 
+          python-version: '3.11'
+        
+      - name: Ejecutar Script
+        run: python ./stats.py
+    
+      - name: Commit y push de los cambios
+        uses: stefanzweifel/git-auto-commit-action@v6
+        with:
+          commit_message: Cambios generados por el pipeline
+          commit_user_name: Gina Alegre [GitHub Actions]
+          commit_user_email: alegregina1999@gmail.com
+          commit_author: Gina
