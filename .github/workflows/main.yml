@@ -27,4 +27,4 @@ jobs:
           commit_message: Cambios generados por el pipeline
           commit_user_name: Gina Alegre [GitHub Actions]
           commit_user_email: alegregina1999@gmail.com
-          commit_author: Gina
+          commit_author: alegre04
